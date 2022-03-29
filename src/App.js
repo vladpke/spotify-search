@@ -13,7 +13,9 @@ import SectionTitle from "./components/SectionTitle";
 // Instantiate Spotify API wrapper
 let spotifyApi = new SpotifyWebApi();
 let spotifyToken = window.localStorage.getItem("token");
-spotifyApi.setAccessToken(spotifyToken);
+if (spotifyToken) {
+  spotifyApi.setAccessToken(spotifyToken);
+}
 
 function App() {
   // Begin login procedure
@@ -36,6 +38,8 @@ function App() {
     }
 
     setToken(token);
+
+    spotifyApi.setAccessToken(token);
 
   }, [])
 
