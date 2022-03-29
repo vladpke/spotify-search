@@ -3,6 +3,9 @@ import SpotifyWebApi from 'spotify-web-api-node';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { TextField } from '@mui/material';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import MicIcon from '@mui/icons-material/Mic';
 
 import './App.css';
 import AlbumCard from "./components/AlbumCard";
@@ -16,20 +19,6 @@ let spotifyToken = window.localStorage.getItem("token");
 if (spotifyToken) {
   spotifyApi.setAccessToken(spotifyToken);
 }
-
-// Speech recognition
-// let SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
-// let SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList;
-// let SpeechRecognitionEvent = window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
-
-// let recognition = new SpeechRecognition();
-// let speechRecognitionList = new SpeechGrammarList();
-
-// recognition.grammars = speechRecognitionList;
-// recognition.continuous = false;
-// recognition.lang = 'en-US';
-// recognition.interimResults = false;
-// recognition.maxAlternatives = 1;
 
 function App() {
   // Begin login procedure
@@ -132,6 +121,15 @@ function App() {
               console.log(event.target.value)
               updateResults(event.target.value)
             }
+          }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment>
+                <IconButton>
+                  <MicIcon />
+                </IconButton>
+              </InputAdornment>
+            )
           }}
         />
       </Box>
