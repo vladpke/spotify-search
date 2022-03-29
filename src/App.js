@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import SpotifyWebApi from 'spotify-web-api-node';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { TextField, Typography } from '@mui/material';
+import { TextField } from '@mui/material';
 
 import './App.css';
 import AlbumCard from "./components/AlbumCard";
@@ -147,7 +147,7 @@ function App() {
           </Grid>
         ))}
       </Grid>
-      
+
     </div>
   );
 }
