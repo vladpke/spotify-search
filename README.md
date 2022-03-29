@@ -1,5 +1,7 @@
 # Spotify Search Engine Demo
 
+![This is an image](./public/Search-spotify.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
