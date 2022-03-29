@@ -8,6 +8,7 @@ import './App.css';
 import AlbumCard from "./components/AlbumCard";
 import ArtistCard from "./components/ArtistCard";
 import SongCard from "./components/SongCard";
+import SectionTitle from "./components/SectionTitle";
 
 // Instantiate Spotify API wrapper
 let spotifyApi = new SpotifyWebApi();
@@ -117,17 +118,8 @@ function App() {
         />
       </Box>
       
-      <Box sx={{
-              ml: 'auto',
-              mr: 'auto',
-              width: 100,
-              maxWidth: '100%',
-              minHeight: 70
-          }}>
-            <Typography gutterBottom variant="h4" component="div">
-              Songs
-            </Typography>
-      </Box>
+      <SectionTitle text={"Songs"}></SectionTitle>
+
       <Grid container spacing={3} justifyContent="space-evenly">
         {songs.map && songs.map(song => (
           <Grid item xs={12} sm={6} md={3}>
@@ -136,18 +128,7 @@ function App() {
         ))}
       </Grid>
 
-      <Box sx={{
-              ml: 'auto',
-              mr: 'auto',
-              mt: '50px',
-              width: 100,
-              maxWidth: '100%',
-              minHeight: 70
-          }}>
-            <Typography gutterBottom variant="h4" component="div">
-              Artists
-            </Typography>
-      </Box>
+      <SectionTitle text={"Artists"}></SectionTitle>
 
       <Grid container spacing={3} justifyContent="space-evenly">
         {artists.map && artists.map(artist => (
@@ -157,18 +138,7 @@ function App() {
         ))}
       </Grid>
 
-      <Box sx={{
-              ml: 'auto',
-              mr: 'auto',
-              mt: '50px',
-              width: 100,
-              maxWidth: '100%',
-              minHeight: 70
-          }}>
-            <Typography gutterBottom variant="h4" component="div">
-              Albums
-            </Typography>
-      </Box>
+      <SectionTitle text={"Albums"}></SectionTitle>
 
       <Grid container spacing={3} justifyContent="space-evenly">
         {albums.map && albums.map(album => (
@@ -177,45 +147,7 @@ function App() {
           </Grid>
         ))}
       </Grid>
-
-      {/* <Grid container spacing={3} justifyContent="space-evenly">
-        <Grid item xs={12} sm={6} md={3}>
-          <AlbumCard title={album.title} artist={album.artist}></AlbumCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <AlbumCard title={album.title} artist={album.artist}></AlbumCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <AlbumCard title={album.title} artist={album.artist}></AlbumCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <AlbumCard title={album.title} artist={album.artist}></AlbumCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <SongCard title={song.title} artist={song.artist}></SongCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <SongCard title={song.title} artist={song.artist}></SongCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <SongCard title={song.title} artist={song.artist}></SongCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <SongCard title={song.title} artist={song.artist}></SongCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <ArtistCard name={artist.name} bio={artist.bio}></ArtistCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <ArtistCard name={artist.name} bio={artist.bio}></ArtistCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <ArtistCard name={artist.name} bio={artist.bio}></ArtistCard>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <ArtistCard name={artist.name} bio={artist.bio}></ArtistCard>
-        </Grid>
-      </Grid> */}
+      
     </div>
   );
 }
