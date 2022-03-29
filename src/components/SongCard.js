@@ -8,7 +8,7 @@ import { CardActionArea } from '@mui/material';
 export default function SongCard({ title, artist, imageURL, url }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea href={url}  target="_blank">
         <CardMedia
           component="img"
           height="345"

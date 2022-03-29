@@ -5,10 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-export default function ArtistCard({ name, followers, imageURL }) {
+export default function ArtistCard({ name, followers, imageURL, url }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea href={url}  target="_blank">
         <CardMedia
           component="img"
           height="345"
