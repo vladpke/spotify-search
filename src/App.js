@@ -17,6 +17,20 @@ if (spotifyToken) {
   spotifyApi.setAccessToken(spotifyToken);
 }
 
+// Speech recognition
+// let SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+// let SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList;
+// let SpeechRecognitionEvent = window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+
+// let recognition = new SpeechRecognition();
+// let speechRecognitionList = new SpeechGrammarList();
+
+// recognition.grammars = speechRecognitionList;
+// recognition.continuous = false;
+// recognition.lang = 'en-US';
+// recognition.interimResults = false;
+// recognition.maxAlternatives = 1;
+
 function App() {
   // Begin login procedure
   const CLIENT_ID = "18ebc1920094456f89a9b99bee1ba327";
@@ -126,7 +140,7 @@ function App() {
 
       <Grid container spacing={3} justifyContent="space-evenly">
         {songs.map && songs.map(song => (
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3} key={song.id}>
             <SongCard title={song.name} artist={song.artists[0].name} imageURL={(song.album.images[1] && song.album.images[1].url) || placeholder} url={song.external_urls.spotify}></SongCard>
           </Grid>
         ))}
@@ -136,7 +150,7 @@ function App() {
 
       <Grid container spacing={3} justifyContent="space-evenly">
         {artists.map && artists.map(artist => (
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3} key={artist.id}>
             <ArtistCard name={artist.name} followers={artist.followers.total} imageURL={(artist.images[1] && artist.images[1].url) || placeholder} url={artist.external_urls.spotify}></ArtistCard>
           </Grid>
         ))}
@@ -146,7 +160,7 @@ function App() {
 
       <Grid container spacing={3} justifyContent="space-evenly">
         {albums.map && albums.map(album => (
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3} key={album.id}>
             <AlbumCard title={album.name} artist={album.artists[0].name} imageURL={(album.images[1] && album.images[1].url) || placeholder} url={album.external_urls.spotify}></AlbumCard>
           </Grid>
         ))}
